@@ -197,11 +197,12 @@ function spotserver() {
         clearObject(userSecrets);
         clearObject(tokens);
         clearObject(pending);
-        res.send('success.jpg');
         clearTimeout(playlist.current);
         playlist.current = {};
         playlist.list = [];
         playlist.playing = false;
+        socket.emit('playlist', playlist.list);
+        res.send('success.jpg');
     });
 
     app.get('/addSong', (req, res) => {
