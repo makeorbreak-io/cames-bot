@@ -1,5 +1,7 @@
 .room {
     display:grid;
+    height:100vh;
+    overflow:hidden;
     grid-template-columns: auto 500px;
     grid-template-rows: 100%;
   }

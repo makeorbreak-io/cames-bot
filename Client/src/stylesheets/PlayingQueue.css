@@ -43,4 +43,7 @@
   background-color: #5C6BC0;
 }
 
-
+.playing-queue__playlist{
+  overflow:auto;
+  flex:1;
+}

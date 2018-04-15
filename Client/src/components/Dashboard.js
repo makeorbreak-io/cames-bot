@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import CurrentPlay from "./CurrentPlay";
-import ReactionBar from "./ReactionBar";
 
 export class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <img className="dashboard__camoes" src="/camoes.png" alt="camoes_logo" />
-        <ReactionBar votes={this.props.votes} active={-1} editVote={this.props.editVote}/>
-        <CurrentPlay skipSong={this.props.skipSong} song={this.props.currentSong} userName={this.props.userName}/> 
+        <img className={"dashboard__camoes " + (this.props.playing ? "dashboard__camoes--playing" : "" )} src="/camoes.png" alt="camoes_logo" />
+        <div className="reset_button" onClick={this.props.reset} > Reset </div>
+        <div className="name" >{this.props.userName} </div>
+        <CurrentPlay skipSong={this.props.skipSong} song={this.props.currentSong} /> 
       </div>
     );
   }

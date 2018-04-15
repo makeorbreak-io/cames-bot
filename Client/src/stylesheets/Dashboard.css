@@ -11,3 +11,27 @@
 .dashboard__camoes{
   margin-top: auto;
 }
+.dashboard__camoes--playing {
+  animation-name: rotate; 
+  animation-duration: 10s; 
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+.reset_button {
+  position: absolute;
+  color:white;
+  cursor: pointer;
+  left: 5px;
+  top: 5px;
+}
+.name {
+  position:absolute;
+  color:black;
+  right: 10px;
+  top: 10px;
+}

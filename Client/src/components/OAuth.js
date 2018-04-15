@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 export class Auth extends Component {
 
   componentDidMount() {
-    this.props.setUser(this.props.location.search.split("=")[1]);
+    this.props.setUser(this.props.location.search.split("=")[1].split("&")[0]);
   }
   render() {
     return (

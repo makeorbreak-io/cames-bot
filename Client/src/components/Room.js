@@ -17,7 +17,6 @@ export class Room extends Component {
 
   constructor(props) {
     super(props);
-    
     this.state = {
       newSong: "",
       queue: [],
@@ -32,18 +31,6 @@ export class Room extends Component {
   changeAddSong = (value) => {
     this.setState({newSong: value});
   }
-  getQueue = () => { 
-    console.log("UPDATE QUEUE IN API");
-  }
-
-  getPlaylist = () => {
-    console.log("UPDATE PLAYLIST IN API");
-  }
-
-  editVote = (vote) => {
-    console.log("edit vote to ",vote);
-  }
-
   addSong = () => {
     fetch(BASE_URL + "/addSong?song="+this.state.newSong + "&username=" + this.props.userName).then(response => response.json()).then(
       responseJson => console.log("response",responseJson)
@@ -55,8 +42,13 @@ export class Room extends Component {
       responseJson => console.log("response",responseJson)
     ); 
   }
+  reset = () => {
+    fetch(BASE_URL + "/reset");
+
+  }
 
   componentDidMount(){
+    
     this.socket = openSocket(BASE_URL);
     this.socket.on("playlist",(queue) =>{console.log("qeueu",queue);this.setState({queue});});
   }
@@ -64,7 +56,7 @@ export class Room extends Component {
   render() {
     return (
       <div className="room">
-        <Dashboard skipSong={this.skipSong} editVote={this.editVote} currentSong={this.state.queue[0]} votes={this.state.votes} userName={this.props.userName}/>
+        <Dashboard skipSong={this.skipSong} reset={this.reset} playing={this.state.queue.length > 0} currentSong={this.state.queue[0]} votes={this.state.votes} userName={this.props.userName}/>
         <PlayingQueue queue={this.state.queue} playlist={this.state.myPlaylist} newSong={this.state.newSong} addSong={this.addSong} changeAddSong={this.changeAddSong}/>
       </div>
     );

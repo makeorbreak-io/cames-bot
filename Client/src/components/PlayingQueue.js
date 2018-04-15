@@ -47,7 +47,7 @@ export class PlayingQueue extends Component {
           <p className="item-header-artist">Duration</p>
         </div>
         <div className="playing-queue__playlist">
-          {list.map((song, index) => <PlaylistItem key={song.name} even={index % 2 ? "even" : "odd"} name={song.name} artist={song.artists && song.artists[0].name} duration={this.millisToMinutesAndSeconds(song.duration_ms)} />)}
+          {list.map((song, index) => <PlaylistItem key={song.name + "-" + index} even={index % 2 ? "even" : "odd"} name={song.name} artist={song.artists && song.artists[0].name} duration={this.millisToMinutesAndSeconds(song.duration_ms)} />)}
         </div>
         <AddSong addSong={this.props.addSong} newSong={this.props.newSong} changeAddSong={this.props.changeAddSong} />
       </div>

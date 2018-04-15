@@ -8,6 +8,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="Landing">
+        <h2>Camões Bot</h2>
         <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} />
         <button onClick={() => this.props.login(this.state.name)}>Login</button>
       </div>

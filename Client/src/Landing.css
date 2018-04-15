@@ -1,0 +1,13 @@
+.Landing{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20%;
+  height:100vh;
+}
+.Landing > * {
+  margin:15px 0px;
+}
+.Landing > h2 {
+  font-size: 60px;
+}

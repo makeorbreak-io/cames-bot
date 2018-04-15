@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Landing from "./Landing";
 import OAuth from "./components/OAuth";
 import Room from "./components/Room";
@@ -18,7 +18,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route path="/room" render={() => <Room userName={this.state.userName}/>} />
+            <Route path="/room" render={() => this.state.userName !== "" ? <Room userName={this.state.userName}/> : <Redirect to="/"/>} />
             <Route path="/auth" render={(props) => <OAuth location={props.location} setUser={(userName) => this.setState({userName})} />} />
             <Route path="/" render={() => <Landing login={this.login} />}/>
           </Switch>  

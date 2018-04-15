@@ -12,9 +12,9 @@ export class CurrentPlay extends Component {
     const { name, artists, duration_ms } = this.props.song || {name: "no music playing",artist:"",duration:""};
     return (
       <div className="current-play">
-        <p>{this.props.userName}</p>
+        <p style={{margin: "0px 10px"}}>{this.props.userName}</p>
         <div className="current-play__info">
-          {`${name} - ${artists && artists[0].name} - ${this.millisToMinutesAndSeconds(duration_ms)}`}
+          {`${artists && artists[0].name} - ${this.millisToMinutesAndSeconds(duration_ms)}`}
         </div>
         <div onClick={() =>this.props.skipSong()} className="btn-skip">
           <p className="skip-text">Skip</p>
