@@ -1,0 +1,16 @@
+.current-play {
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  background-color: #556;
+  color: white;
+  margin-top: auto;
+  width:100%;
+  height:50px;
+}
+.btn-skip{
+  padding-left: 5%;
+  display: grid;
+  grid-template-columns: 35px auto;
+  grid-template-rows: 100%;
+}

@@ -1,0 +1,46 @@
+.playing-queue{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-left: 1px solid #3A3A49;
+  background-color: #9FA8DA;
+}
+.playing-queue__toggle {
+  width:100%;
+  background-color: #d0d0d6;
+  display:flex;
+  justify-content:flex-end;
+}
+.playing-queue__toggle__button{
+  background-color: #d0d0d6;
+  color: black;
+  border:none;
+  height: 40px;
+  width: 80px;
+  cursor: pointer;
+}
+.playing-queue__toggle__button--active{
+  background-color: #555566;
+  color: white;
+}
+.playing-queue__header {
+  background-color: #555566;
+  padding-left: 5px;
+  display: grid;
+  grid-template-columns: 30% 55% 10%;
+  grid-template-rows: 100%;
+}
+.song__even, .song__odd{
+  padding-left: 5px;
+  display: grid;
+  grid-template-columns: 30% 55% 10%;
+  grid-template-rows: 100%;
+}
+.song__even{
+  background-color: #9FA8DA;
+}
+.song__odd{
+  background-color: #5C6BC0;
+}
+
+
