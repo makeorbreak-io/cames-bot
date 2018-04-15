@@ -201,7 +201,7 @@ function spotserver() {
         playlist.current = {};
         playlist.list = [];
         playlist.playing = false;
-        socket.emit('playlist', playlist.list);
+        io.emit('playlist', playlist.list);
         res.send('success.jpg');
     });
 
