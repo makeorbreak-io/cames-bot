@@ -201,6 +201,7 @@ function spotserver() {
         playlist.current = {};
         playlist.list = [];
         playlist.playing = false;
+        io.emit('reset', 'reset');
         io.emit('playlist', playlist.list);
         res.send('success.jpg');
     });
